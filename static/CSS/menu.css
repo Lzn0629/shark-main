@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.acard1 {
+  position: relative;
+    background-color:rgb(255, 255, 255);
+    margin: 200px 100px 100px;
+    /* padding: 100px 150px; */
+    padding: 20px;
+    z-index: 1;
+}
+
+.btnBack1 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #B0DAF2;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.btnBack1:hover {
+  background-color: #8ABAD3;
+}
+
+.things1 {
+  background-color: rgba(173, 189, 232, 0.85);
+  padding: 20px 80px;
+  border-radius: 10px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-dishname1{
+font-size: 60px;
+
+}
+
+.menu-introduction1{
+z-index: 999;
+}
+
+.menu-dishname1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.menu-v{
+font-size: 28px;
+font-weight: bold;
+color: #333;
+margin-bottom: 25px;
+}
+
+.menu-text{
+max-width: 40%;
+margin-top: 2%;
+}
+
+.menu-dishprice1,
+.menu-dishclassification1,
+.menu-dishIngredients1,
+.menu-introduction,
+.menu-dishIngredients1 {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.recommenddish {
+  display: block;
+  font-size: 18px;
+  color: #8599E1;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.recommenddish:hover {
+  text-decoration: underline;
+}
+.recommend-ul{
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+font-size: 24px;
+font-weight: bold;
+}
+.recommend-ul li{
+margin: 20px 40px;
+}
+.recommend-ul li:hover{
+background-color: rgba(173, 189, 232, 0.85);
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin: 20px 0; 
+}

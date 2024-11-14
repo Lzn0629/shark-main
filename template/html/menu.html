@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/CSS/reset.css" />
+    <link rel="stylesheet" href="/static/CSS/menu.css" />
+    <title>菜單</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div class="acard1">
+      <a class="btnBack1" href="/menuAll/">返回</a>
+      <div class="things1">
+        <img src="{{ menu.image.url }}" alt="{{ m.name }}" style="height: 350px;">
+        <div class="menu-text">
+          <h1 class="menu-dishname1">{{ menu.name }}</h1>   
+          <p class="menu-v">{{ menu.isVegetarian }}</p>
+          <p class="menu-dishprice1">$ {{ menu.price }}</p>
+          <p class="menu-dishclassification1">{{ menu.classification }}</p>
+          <p class="menu-dishIngredients1">成分：{{ menu.allergy }}</p>
+          <hr>
+          <p class="menu-introduction">{{ menu.introduce }}</p>
+        </div>
+      </div>
+      
+    </div>
+    <div>
+      {% if recommendation %}
+      <div class="acard1" style="margin-top: 50px;">
+        <h1 style="font-size: 36px;">為您推薦</h1>
+        <ul class="recommend-ul">
+        {% for r in recommendation %}
+        <li>
+          <a href="/menu/{{ r.id }}" class="recommenddish"><img src="{{ r.image.url }}" style="max-width: 70%; min-width: 200px;"></a>
+          <p>{{ r.name }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

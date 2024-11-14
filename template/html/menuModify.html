@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shark</title>
+  </head>
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .form-group label {
+          color: #333;
+          font-weight: bold;
+          font-size: 24px
+      }
+      .acard1 {
+          width: 70%;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.85);
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          position: relative;
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin-top: 200px; 
+      }
+
+      .btnBack1 {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #B0DAF2;
+          color: #000;
+          text-decoration: none;
+          border-radius: 5px;
+          margin-bottom: 20px;
+          position: absolute;
+          top: 20px;
+          left: 20px;
+      }
+
+      .btnBack1:hover {
+          background-color: #8ABAD3;
+      }
+
+      .things1 {
+          background-color: rgba(173, 189, 232, 0.85);
+          padding: 60px 80px 20px 80px;
+          border-radius: 10px;
+          margin-top: 80px;
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .menu-text{
+        max-width: 40%;
+        margin-top: 2%;
+      }
+
+      hr {
+            border: none;
+            height: 2px;
+            background-color: #ffffff;
+            margin: 20px 0; 
+        }
+      
+        .form-container {
+          background: white;
+          padding: 20px;
+          border-radius: 5px;
+          width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select{
+          width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        .menu-text input,
+        .menu-text textarea,
+        .menu-text select {
+            border: 1px solid #ffffff;
+        }
+
+        .btn {
+            display: block;
+            border-radius: 4px;
+            padding: 5px 10px;
+            border: 1px solid #ffffff;
+            background-color: white;
+
+        }
+
+        .msg{
+          color: #333;
+          font-size: 28px;
+          font-weight: bold;
+          padding-top: 40px;
+        }
+        
+</style>
+  <body>
+    {% include 'header.html' %}
+    <div class="acard1">
+      <a class="btnBack1" href="/menuAll/">返回</a>
+      <form action="/menu/{{ menu.id }}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <div class="things1">
+          <div class="form-group">
+            {{ form.image.label_tag }}
+            <img src="{{ menu.image.url }}" alt="{{ m.name }}" style="height: 350px;">
+            {{ form.image }}
+            {% if msg %}<p class="msg">{{ msg }}</p>{% endif %}
+
+          </div>
+          <div class="menu-text">
+            <div class="form-group">
+              {{ form.name.label_tag }}
+              {{ form.name }}
+            </div>
+            <div class="form-group">
+              {{ form.isVegetarian.label_tag }}
+              {{ form.isVegetarian }}
+            </div>
+            <div class="form-group">
+              {{ form.price.label_tag }}
+              {{ form.price }}
+            </div>
+            <div class="form-group">
+              {{ form.classification.label_tag }}
+              {{ form.classification }}
+            </div>
+            <div class="form-group">
+              {{ form.allergy.label_tag }}
+              {{ form.allergy }}
+            </div>
+            <div class="form-group">
+              {{ form.listingDate.label_tag }}
+              {{ form.listingDate }}
+            </div>
+            <hr>
+            <div class="form-group">
+              {{ form.introduce.label_tag }}
+              {{ form.introduce }}
+            </div>
+            <input type="submit" value="修改" class="btn">
+          </div>
+      </form>
+      </div>
+  </body>
+</html>
